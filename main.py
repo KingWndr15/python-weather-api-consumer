@@ -1,9 +1,14 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_weather_info(city):
     url = "http://api.weatherapi.com/v1/current.json"
+    API_KEY = os.getenv('API_KEY')
     PARAMS = {
-        "key": "ae4c48ab7cd141b282d151037242906",
+        "key": API_KEY,
         "q": city
     }
     try:
